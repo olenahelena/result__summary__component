@@ -29,6 +29,10 @@ body {
     margin: 0 auto;
 }
 
+.wrapper {
+    min-width: 42rem;
+}
+
 @media (min-width: 900px) {
     .wrapper {
         position: absolute;
@@ -41,8 +45,6 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 30px;
-        width: 737px;
-        height: 510px;
         margin: 0 auto;
     }
 }
@@ -145,8 +147,7 @@ body {
 }
 
 .summary {
-    margin: 0 28px 30px 30px;
-    max-width: 317px;
+    margin: 30px;
 }
 
 @media (min-width: 900px) {
@@ -167,64 +168,56 @@ body {
     }
 }
 
-.summary .summary__points__red {
+.summary .summary__points__wrapper {
+    margin-left: auto;
+}
+
+.summary .summary__points__red,
+.summary .summary__points__yellow,
+.summary .summary__points__green,
+.summary .summary__points__blue {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    background-color: hsla(0, 100%, 67%, 0.1);
+    gap: 1rem;
     border-radius: 10px;
     padding: 16px 16px 18px 18px;
     margin-bottom: 16px;
+}
+
+.summary .summary__points__reaction,
+.summary .summary__points__memory,
+.summary .summary__points__verbal,
+.summary .summary__points__visual {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.summary .summary__points__red {
+    background-color: hsla(0, 100%, 67%, 0.1);
 }
 
 .summary .summary__points__reaction {
     color: var(--light-red);
-    font-size: 16px;
-    font-weight: 700;
-    padding-right: 100px;
 }
 
 .summary .summary__points__yellow {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
     background-color: hsla(39, 100%, 56%, 0.1);
-    border-radius: 10px;
-    padding: 16px 16px 18px 18px;
-    margin-bottom: 16px;
 }
 
 .summary .summary__points__memory {
     color: var(--orange-yellow);
-    font-size: 16px;
-    font-weight: 700;
-    padding-right: 100px;
 }
 
 .summary .summary__points__green {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
     background-color: hsla(166, 100%, 37%, 0.1);
-    border-radius: 10px;
-    padding: 16px 16px 18px 18px;
-    margin-bottom: 16px;
 }
 
 .summary .summary__points__verbal {
     color: var(--green-teal);
-    font-size: 16px;
-    font-weight: 700;
-    padding-right: 100px;
 }
 
 .summary .summary__points__blue {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
     background-color: hsla(234, 85%, 45%, 0.1);
-    border-radius: 10px;
-    padding: 16px 16px 18px 18px;
     margin-bottom: 23px;
 }
 
@@ -236,9 +229,6 @@ body {
 
 .summary .summary__points__visual {
     color: var(--cobalt-blue);
-    font-size: 16px;
-    font-weight: 700;
-    padding-right: 100px;
 }
 
 .summary .summary__points__grade {
@@ -251,6 +241,11 @@ body {
     color: hsla(224, 30%, 27%, 0.5);
     font-size: 16px;
     font-weight: 700;
+}
+
+.summary,
+.total_score {
+    flex: 1;
 }
 
 button {
